@@ -1,5 +1,5 @@
 {
-    "name": "jchampion/solarium-module",
+    "name": "ewgo/solarium-module",
     "description": "Zend Framework 2 integration with solarium solr client",
     "keywords": ["zf2", "solr", "solarium", "search"],
     "type": "zf2-module",
@@ -8,7 +8,7 @@
         "solarium/solarium": "3.*"
     },
     "autoload": {
-        "psr-0": { "SmileSolarium": "src/" },
+        "psr-0": { "EwgoSolarium": "src/" },
         "classmap": [ "./Module.php" ]
     }
 }
