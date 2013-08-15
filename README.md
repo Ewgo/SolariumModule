@@ -2,7 +2,9 @@
 
 ## About
 
-The EwgoSolarium module provides ZF2 integration with the [solarium](http://www.solarium-project.org) solr client.
+The EwgoSolarium module provides ZF2 integration with [Solarium](http://www.solarium-project.org) solr client.
+
+It also integrates with [Zend Developer Tools](https://github.com/zendframework/ZendDeveloperTools).
 
 ## Installation
 
@@ -40,3 +42,13 @@ $resultset = $client->execute($query);
 ```
 
 For more information see the [Solarium documentation](http://www.solarium-project.org/documentation/).
+
+## Paginator adapter
+This module also provides an adapter for Zend\Paginator.
+```php
+$paginator = new \Zend\Paginator\Paginator(
+    new \EwgoSolarium\Paginator\Adapter\SolariumPaginator($client, $query)
+);
+$paginator->setCurrentPageNumber($page);
+$paginator->setItemCountPerPage($countPerPage);
+```

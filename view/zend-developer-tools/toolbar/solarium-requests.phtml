@@ -1,0 +1,62 @@
+<?php /* @var $collector \EwgoSolarium\Collector\RequestCollector */ ?>
+<div class="zdt-toolbar-entry">
+    <div class="zdt-toolbar-preview">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAgCAYAAAAWl4iLAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB90IDxQ5O67HkfQAAAN4SURBVEjH7ZVfaFtVHMd/59x77k1u/t8kTdKm2Va72C4dK1NRN7LopvZhIvinFfEvoogFYeqrEHxRqrAivig4ReYeVNhetDIdHUVWtsWiVNsiW5PaxqxJSG6ym97c/8c3wdmW+OZDP4/ncD7nxznf8zsAO+xwK2i7yd9Gd0V7RN8zlWZ7qbSszyWCnom6bF4vSLXJscVqa7u1eLPBi6PgbrweF0N9oTf9yeD7gstc2zXgeq0vFXzO4UbpscWqcjXVd2Iq2h/uWFydOOQZzmSm9O7wEBf3p+oYfl3MFZaDewMnmiCv7j+/9NDi8eTbQ8nIpBjjLp0WRW9HYtsHXSQiHmZiHomE3ftRiH3vrpfTL3j7RaFGpAfXxm9/YjAVeqvu1EyGt06+W6+r2UyG3VasnDuS9nSTGCsKOSIKPjbgVFR07UeuOzzRMI03ME9wfHj314rTXpOl4kHdUzx7Nj104dj6+qu3iv+xE9PVMwoI5oEnP7Ga/zbMkG8DZHgE2ezl8rUrn/YM339Du6lOz3x3+dGDmcGjASk+GzFd7oZWEwHgw00rzmYBU8GaZrzIxwjmHOshAXDZOcbnvk+jhfH43SOzSECfzHwx9Uj6pQcmI8nEOd7LOPJy/eNWqz62Zdwa88f6nJxwJ2ZZAxhOBVPhbIsPmYbd4ExyhGqwYBj6PNH4L0HS3NpK6Z3y91dOEw4MGw0+ueebpY82FRcuZhzReOsei1mXCHVRA2uYA9FJzXgvpcTCqmM3NrmHQWp+diM3M+3xp/ahpvWKvW485r9JAJ2aRVs+EErBBwAGQqDYNvDaMt9rswdCLE3sZRTOa+pWkVHZo7RpjRFZizZXJcUsyQuNovp7/1cLz255eQhB8+/Dx6DZVa1sqBUXprEKeN082cB3UE3Lm+3G841yacXxR14SbWRfJ8TYNhX/ymIY5HaZ2SC2k7UNzrKQpTAMGUDuwHEh7OyhONLVLstirFF5EaD+eadifnUVMNJVZGGdUGw5KNA/TatdsHTtZ6B2FCO6T1bVjXwxf6bjiikFo1Z0dpuWw8MiSpClKwichykj9GIeCmZdWqjOXRhPnIJ6x00IAKBWAzdPgwEWJxOGRny0BQeMjcYPliafsW06YALcG+jaQ/5zP6VZwFkKWF95/FAlF4q1f3lqxJh/+mTpA3d457fZYYf/K38BSFt9wCpXTjoAAAAASUVORK5CYII=" alt="Solarium (Requests)">
+        <span class="zdt-toolbar-info">
+            <?php echo $collector->getRequestCount(); ?>
+            queries in
+            <?php echo $this->zendDeveloperToolsTime($collector->getRequestTime()); ?> s
+        </span>
+    </div>
+    <div class="zdt-toolbar-detail">
+        <span class="zdt-toolbar-info zdt-toolbar-info-heading">
+            <a href="http://www.solarium-project.org/" target="_blank">
+                Solarium
+            </a>
+        </span>
+        <span class="zdt-toolbar-info slr-toolbar-info" style="overflow-y:scroll">
+        <?php foreach ($collector->getRequests() as $request): ?>
+            <hr/>
+            <span class="zdt-detail-label">Handler</span>
+            <span class="zdt-detail-value">
+                <?php echo $request['handler'] ?>
+            </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Params</span>
+            <span class="zdt-detail-value">
+                <?php if (isset($request['params']) && is_array($request['params'])): ?>
+                    <?php foreach($request['params'] as $key => $value): ?>
+                        <?php echo $key ?> => <?php echo $this->escapeHtml($value) ?><br/>
+                    <?php endforeach ?>
+                <?php endif ?>
+            </span>
+            <span class="clear"></span>
+            <span class="zdt-detail-label">Time</span>
+            <span class="zdt-detail-value"><?php echo $request['duration'] ?></span>
+            <span class="clear"></span>
+        <?php endforeach ?>
+        <br />
+        </span>
+    </div>
+</div>
+<style>
+.zdt-toolbar-entry .zdt-toolbar-detail .slr-toolbar-info {
+    font-size: 11px;
+    max-width: 600px;
+    witdh: 600px;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-info .clear {
+    clear: both;
+    display: block;
+}
+
+.zdt-toolbar-entry .zdt-toolbar-detail .slr-toolbar-info hr {
+    border: 0;
+    border-top: 1px solid #80DC09;
+    clear: both;
+}
+</style>
