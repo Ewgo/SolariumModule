@@ -4,13 +4,20 @@ namespace EwgoSolarium\Collector;
 
 use ZendDeveloperTools\Collector\AutoHideInterface;
 use ZendDeveloperTools\Collector\CollectorInterface;
-use Solarium\Core\Client\Request;
+use EwgoSolarium\Plugin\RequestLogger;
+use Zend\Mvc\MvcEvent;
 
+/**
+ * Zend Developer Toolbar collector for Solarium requests
+ *
+ * @license MIT
+ * @package EwgoSolarium
+ */
 class RequestCollector implements CollectorInterface, AutoHideInterface
 {
     /**
      * Solarium request logger
-     * @var \EwgoSolarium\Plugin\RequestLogger
+     * @var RequestLogger
      */
     protected $logger;
 
@@ -26,7 +33,7 @@ class RequestCollector implements CollectorInterface, AutoHideInterface
      */
     protected $totalRequestTime = 0;
 
-    public function __construct(\EwgoSolarium\Plugin\RequestLogger $logger)
+    public function __construct(RequestLogger $logger)
     {
         $this->logger = $logger;
     }
@@ -36,7 +43,7 @@ class RequestCollector implements CollectorInterface, AutoHideInterface
         return empty($this->requests);
     }
 
-    public function collect(\Zend\Mvc\MvcEvent $mvcEvent)
+    public function collect(MvcEvent $mvcEvent)
     {
         foreach ($this->logger->getRequests() as $request) {
             $this->totalRequestTime += $request['duration'];

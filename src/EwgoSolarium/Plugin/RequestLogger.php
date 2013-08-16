@@ -2,13 +2,19 @@
 
 namespace EwgoSolarium\Plugin;
 
-use Solarium\Core\Client\Endpoint;
-use Solarium\Core\Client\Request;
-use Solarium\Core\Event\Events;
-use Solarium\Core\Event\PostExecuteRequest;
-use Solarium\Core\Event\PreExecuteRequest;
 use Solarium\Core\Plugin\Plugin;
+use Solarium\Core\Event\Events;
+use Solarium\Core\Client\Request;
+use Solarium\Core\Client\Endpoint;
+use Solarium\Core\Event\PreExecuteRequest;
+use Solarium\Core\Event\PostExecuteRequest;
 
+/**
+ * Solarium requests logger
+ *
+ * @license MIT
+ * @package EwgoSolarium
+ */
 class RequestLogger extends Plugin
 {
     /**

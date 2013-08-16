@@ -5,6 +5,12 @@ namespace EwgoSolarium\Service;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
+/**
+ * Solarium request logger factory
+ *
+ * @license MIT
+ * @package EwgoSolarium
+ */
 class RequestLoggerFactory implements FactoryInterface
 {
     /**

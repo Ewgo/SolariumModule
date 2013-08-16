@@ -5,6 +5,12 @@ namespace EwgoSolarium\Service;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 
+/**
+ * Zend Developer Toolbar collector for Solarium requests factory
+ *
+ * @license MIT
+ * @package EwgoSolarium
+ */
 class RequestCollectorFactory implements FactoryInterface
 {
     /**

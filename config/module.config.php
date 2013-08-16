@@ -16,7 +16,7 @@ return array(
 
     'view_manager' => array(
         'template_map' => array(
-            'zend-developer-tools/toolbar/solarium-requests'  => __DIR__ . '/../view/zend-developer-tools/toolbar/solarium-requests.phtml',
+            'zend-developer-tools/toolbar/solarium-requests' => __DIR__ . '/../view/zend-developer-tools/toolbar/solarium-requests.phtml',
         ),
     ),
 
