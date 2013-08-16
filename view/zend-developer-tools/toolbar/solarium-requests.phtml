@@ -5,7 +5,7 @@
         <span class="zdt-toolbar-info">
             <?php echo $collector->getRequestCount(); ?>
             queries in
-            <?php echo $this->zendDeveloperToolsTime($collector->getRequestTime()); ?> s
+            <?php echo $this->zendDeveloperToolsTime($collector->getRequestTime()); ?>
         </span>
     </div>
     <div class="zdt-toolbar-detail">
@@ -32,7 +32,7 @@
             </span>
             <span class="clear"></span>
             <span class="zdt-detail-label">Time</span>
-            <span class="zdt-detail-value"><?php echo $request['duration'] ?></span>
+            <span class="zdt-detail-value"><?php echo $this->zendDeveloperToolsTime($request['duration']) ?></span>
             <span class="clear"></span>
         <?php endforeach ?>
         <br />
