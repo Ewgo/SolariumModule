@@ -4,6 +4,7 @@ namespace EwgoSolarium\Service;
 
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
+use EwgoSolarium\Plugin\RequestLogger;
 
 /**
  * Solarium request logger factory
@@ -21,6 +22,8 @@ class RequestLoggerFactory implements FactoryInterface
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
-        return new \EwgoSolarium\Plugin\RequestLogger();
+        $logger = new RequestLogger();
+        $logger->register($serviceLocator->get('solarium'));
+        return $logger;
     }
 }
