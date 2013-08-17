@@ -14,6 +14,7 @@
                 Solarium
             </a>
         </span>
+        <?php if($collector->getRequestCount()): ?>
         <span class="zdt-toolbar-info slr-toolbar-info" style="overflow-y:scroll">
         <?php foreach ($collector->getRequests() as $request): ?>
             <hr/>
@@ -37,6 +38,7 @@
         <?php endforeach ?>
         <br />
         </span>
+        <?php endif ?>
     </div>
 </div>
 <style>
