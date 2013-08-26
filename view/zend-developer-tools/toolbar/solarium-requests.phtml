@@ -27,7 +27,7 @@
             <span class="zdt-detail-value">
                 <?php if (isset($request['params']) && is_array($request['params'])): ?>
                     <?php foreach($request['params'] as $key => $value): ?>
-                        <?php echo $key ?> => <?php echo $this->escapeHtml($value) ?><br/>
+                        <?php echo $key ?> => <?php echo $this->escapeHtml(var_export($value, true)) ?><br/>
                     <?php endforeach ?>
                 <?php endif ?>
             </span>
