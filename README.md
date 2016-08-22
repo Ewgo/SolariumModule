@@ -2,7 +2,7 @@
 
 ## About
 
-The EwgoSolarium module provides ZF2 integration with [Solarium](http://www.solarium-project.org) solr client.
+The EwgoSolarium module provides ZF3 integration with [Solarium](http://www.solarium-project.org) solr client.
 
 It also integrates with [Zend Developer Tools](https://github.com/zendframework/ZendDeveloperTools).
 

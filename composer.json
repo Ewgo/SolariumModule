@@ -1,11 +1,15 @@
 {
     "name": "ewgo/solarium-module",
-    "description": "Zend Framework 2 integration with solarium solr client",
-    "keywords": ["zf2", "solr", "solarium", "search"],
+    "description": "Zend Framework 3 integration with solarium solr client",
+    "keywords": ["zf3", "solr", "solarium", "search"],
     "license": "MIT",
-    "type": "zf2-module",
+    "type": "zf3-module",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
-        "zendframework/zendframework": "2.*",
+        "zendframework/zend-component-installer": "^1.0 || ^0.3 || ^1.0.0-dev@dev",
+        "zendframework/zendframework": "^3.0.2",
+        "zendframework/zend-mvc": "^3.0.2",
         "solarium/solarium": "3.*"
     },
     "autoload": {

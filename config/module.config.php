@@ -3,14 +3,14 @@
 return array(
     'service_manager' => array(
         'factories' => array(
-            'Solarium\Client' => 'EwgoSolarium\Service\SolariumFactory',
+            'Solarium\Client'                         => 'EwgoSolarium\Service\SolariumFactory',
             'EwgoSolarium\Collector\RequestCollector' => 'EwgoSolarium\Service\RequestCollectorFactory',
-            'EwgoSolarium\Plugin\RequestLogger' => 'EwgoSolarium\Service\RequestLoggerFactory'
+            'EwgoSolarium\Plugin\RequestLogger'       => 'EwgoSolarium\Service\RequestLoggerFactory'
         ),
-        'aliases' => array(
-            'solarium' => 'Solarium\Client',
+        'aliases'   => array(
+            'solarium'           => 'Solarium\Client',
             'solarium.collector' => 'EwgoSolarium\Collector\RequestCollector',
-            'solarium.logger' => 'EwgoSolarium\Plugin\RequestLogger'
+            'solarium.logger'    => 'EwgoSolarium\Plugin\RequestLogger'
         )
     ),
 
@@ -23,12 +23,12 @@ return array(
     'zenddevelopertools' => array(
         'profiler' => array(
             'collectors' => array(
-                'solarium'  => 'solarium.collector',
+                'solarium' => 'solarium.collector',
             ),
         ),
-        'toolbar' => array(
+        'toolbar'  => array(
             'entries' => array(
-                'solarium'  => 'zend-developer-tools/toolbar/solarium-requests',
+                'solarium' => 'zend-developer-tools/toolbar/solarium-requests',
             ),
         ),
     ),

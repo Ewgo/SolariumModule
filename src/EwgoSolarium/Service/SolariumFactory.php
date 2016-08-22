@@ -2,9 +2,9 @@
 
 namespace EwgoSolarium\Service;
 
-use Zend\ServiceManager\FactoryInterface;
-use Zend\ServiceManager\ServiceLocatorInterface;
+use Interop\Container\ContainerInterface;
 use Solarium\Client;
+use Zend\ServiceManager\Factory\FactoryInterface;
 
 /**
  * Solarium client factory
@@ -17,10 +17,10 @@ class SolariumFactory implements FactoryInterface
     /**
      * Create service
      *
-     * @param ServiceLocatorInterface $serviceLocator
+     * @param ContainerInterface $serviceLocator
      * @return mixed
      */
-    public function createService(ServiceLocatorInterface $serviceLocator)
+    public function __invoke(ContainerInterface $serviceLocator, $requestedName, array $options = null)
     {
         $config = $serviceLocator->get('Configuration');
         $client = new Client(isset($config['solarium']) ? $config['solarium'] : array());
