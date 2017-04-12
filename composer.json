@@ -8,9 +8,9 @@
     "prefer-stable": true,
     "require": {
         "zendframework/zend-component-installer": "^1.0 || ^0.3 || ^1.0.0-dev@dev",
-        "zendframework/zendframework": "^3.0.2",
-        "zendframework/zend-mvc": "^3.0.2",
-        "solarium/solarium": "3.*"
+        "zendframework/zendframework": "^3",
+        "zendframework/zend-mvc": "^3",
+        "solarium/solarium": "~3"
     },
     "autoload": {
         "psr-0": { "EwgoSolarium": "src/" },
