@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="tests/Bootstrap.php" colors="true" backupGlobals="false" backupStaticAttributes="false">
+
+    <testsuites>
+        <testsuite name="Synergy Solarium Test">
+            <directory suffix="Test.php">tests</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <includePath>tests</includePath>
+        <includePath>../../vendor</includePath>
+        <includePath>../../src</includePath>
+    </php>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">src</directory>
+        </whitelist>
+    </filter>
+</phpunit>

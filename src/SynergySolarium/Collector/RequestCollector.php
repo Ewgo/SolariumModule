@@ -1,17 +1,17 @@
 <?php
 
-namespace EwgoSolarium\Collector;
+namespace SynergySolarium\Collector;
 
 use ZendDeveloperTools\Collector\AutoHideInterface;
 use ZendDeveloperTools\Collector\CollectorInterface;
-use EwgoSolarium\Plugin\RequestLogger;
+use SynergySolarium\Plugin\RequestLogger;
 use Zend\Mvc\MvcEvent;
 
 /**
  * Zend Developer Toolbar collector for Solarium requests
  *
  * @license MIT
- * @package EwgoSolarium
+ * @package SynergySolarium
  */
 class RequestCollector implements CollectorInterface, AutoHideInterface
 {

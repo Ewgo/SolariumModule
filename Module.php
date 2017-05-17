@@ -1,6 +1,6 @@
 <?php
 
-namespace EwgoSolarium;
+namespace SynergySolarium;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\ModuleManager\Feature\ConfigProviderInterface;

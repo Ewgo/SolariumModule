@@ -1,15 +1,40 @@
 {
-    "name": "ewgo/solarium-module",
-    "description": "Zend Framework 2 integration with solarium solr client",
-    "keywords": ["zf2", "solr", "solarium", "search"],
-    "license": "MIT",
-    "type": "zf2-module",
-    "require": {
-        "zendframework/zendframework": "2.*",
-        "solarium/solarium": "3.*"
+  "name": "synergy/solarium-module",
+  "description": "Zend Framework 3 integration with solarium solr search client client",
+  "keywords": [
+    "zf3",
+    "solr",
+    "solarium",
+    "search"
+  ],
+  "license": "MIT",
+  "type": "zf3-module",
+  "prefer-stable": true,
+  "require": {
+    "zendframework/zend-component-installer": "^1.0 || ^0.3 || ^1.0.0-dev@dev",
+    "zendframework/zendframework": "^3",
+    "zendframework/zend-mvc": "^3",
+    "solarium/solarium": "~3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~5",
+    "satooshi/php-coveralls": "^1",
+    "zendframework/zend-developer-tools": "dev-master"
+  },
+  "autoload": {
+    "psr-0": {
+      "SynergySolarium": "src/",
+      "SynergySolariumTest": "tests/"
     },
-    "autoload": {
-        "psr-0": { "EwgoSolarium": "src/" },
-        "classmap": [ "./Module.php" ]
+    "classmap": [
+      "./tests/SynergySolariumTest/Module.php",
+      "./Module.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "Pele Odiase",
+      "email": "peleodiase@yahoo.co.uk"
     }
+  ]
 }
