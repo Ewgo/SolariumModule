@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/odiaseo/SolariumModule.svg?branch=master)](https://travis-ci.org/odiaseo/SolariumModule)
+[![Coverage Status](https://coveralls.io/repos/github/odiaseo/SolariumModule/badge.svg?branch=master)](https://coveralls.io/github/odiaseo/SolariumModule?branch=master)
 
 # SynergySolarium module
 
