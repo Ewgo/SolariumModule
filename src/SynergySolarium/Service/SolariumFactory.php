@@ -1,6 +1,6 @@
 <?php
 
-namespace EwgoSolarium\Service;
+namespace SynergySolarium\Service;
 
 use Interop\Container\ContainerInterface;
 use Solarium\Client;
@@ -10,15 +10,16 @@ use Zend\ServiceManager\Factory\FactoryInterface;
  * Solarium client factory
  *
  * @license MIT
- * @package EwgoSolarium
+ * @package SynergySolarium
  */
 class SolariumFactory implements FactoryInterface
 {
     /**
-     * Create service
-     *
      * @param ContainerInterface $serviceLocator
-     * @return mixed
+     * @param string $requestedName
+     * @param array|null $options
+     *
+     * @return Client
      */
     public function __invoke(ContainerInterface $serviceLocator, $requestedName, array $options = null)
     {

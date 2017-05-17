@@ -1,6 +1,6 @@
 <?php
 
-namespace EwgoSolarium\Paginator\Adapter;
+namespace SynergySolarium\Paginator\Adapter;
 
 use Zend\Paginator\Adapter\AdapterInterface;
 use Solarium\Client;
@@ -10,7 +10,7 @@ use Solarium\QueryType\Select\Query\Query;
  * Solarium result paginator
  *
  * @license MIT
- * @package EwgoSolarium
+ * @package SynergySolarium
  */
 class SolariumPaginator implements AdapterInterface
 {

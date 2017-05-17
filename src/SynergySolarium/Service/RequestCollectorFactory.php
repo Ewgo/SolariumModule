@@ -1,8 +1,8 @@
 <?php
 
-namespace EwgoSolarium\Service;
+namespace SynergySolarium\Service;
 
-use EwgoSolarium\Collector\RequestCollector;
+use SynergySolarium\Collector\RequestCollector;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\FActory\FactoryInterface;
 
@@ -10,15 +10,16 @@ use Zend\ServiceManager\FActory\FactoryInterface;
  * Zend Developer Toolbar collector for Solarium requests factory
  *
  * @license MIT
- * @package EwgoSolarium
+ * @package SynergySolarium
  */
 class RequestCollectorFactory implements FactoryInterface
 {
     /**
-     * Create service
-     *
      * @param ContainerInterface $serviceLocator
-     * @return mixed
+     * @param string $requestedName
+     * @param array|null $options
+     *
+     * @return RequestCollector
      */
     public function __invoke(ContainerInterface $serviceLocator, $requestedName, array $options = null)
     {

@@ -1,18 +1,20 @@
-# EwgoSolarium module
+# SynergySolarium module
 
 ## About
 
-The EwgoSolarium module provides ZF3 integration with [Solarium](http://www.solarium-project.org) solr client.
+The SynergySolarium module provides ZF3 integration with [Solarium](http://www.solarium-project.org) solr client.
 
 It also integrates with [Zend Developer Tools](https://github.com/zendframework/ZendDeveloperTools).
+
+Inspired by Ewgo/SolariumModule ZF2 module
 
 ## Installation
 
 ``` bash
-$ php composer.phar require ewgo/solarium-module
+$ php composer.phar require synergy/solarium-module
 ```
 
-Add "EwgoSolarium" to the list of loaded modules.
+Add "SynergySolarium" to the list of loaded modules.
 
 ## Basic configuration
 
@@ -47,7 +49,7 @@ For more information see the [Solarium documentation](http://www.solarium-projec
 This module also provides an adapter for Zend\Paginator.
 ```php
 $paginator = new \Zend\Paginator\Paginator(
-    new \EwgoSolarium\Paginator\Adapter\SolariumPaginator($client, $query)
+    new \SynergySolarium\Paginator\Adapter\SolariumPaginator($client, $query)
 );
 $paginator->setCurrentPageNumber($page);
 $paginator->setItemCountPerPage($countPerPage);

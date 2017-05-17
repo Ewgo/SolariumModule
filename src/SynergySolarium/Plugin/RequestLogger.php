@@ -1,6 +1,6 @@
 <?php
 
-namespace EwgoSolarium\Plugin;
+namespace SynergySolarium\Plugin;
 
 use Solarium\Client;
 use Solarium\Core\Client\Endpoint;
@@ -8,13 +8,13 @@ use Solarium\Core\Client\Request;
 use Solarium\Core\Event\Events;
 use Solarium\Core\Event\PostExecuteRequest;
 use Solarium\Core\Event\PreExecuteRequest;
-use Solarium\Core\Plugin\Plugin;
+use Solarium\Core\Plugin\AbstractPlugin as Plugin;
 
 /**
  * Solarium requests logger
  *
  * @license MIT
- * @package EwgoSolarium
+ * @package SynergySolarium
  */
 class RequestLogger extends Plugin
 {
@@ -67,9 +67,9 @@ class RequestLogger extends Plugin
      * Log current request
      *
      * @param Request $request
-     * @param type $response
+     * @param $response
      * @param Endpoint $endpoint
-     * @param type $duration
+     * @param $duration
      */
     public function log(Request $request, $response, Endpoint $endpoint, $duration)
     {

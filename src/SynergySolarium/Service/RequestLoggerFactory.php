@@ -1,8 +1,8 @@
 <?php
 
-namespace EwgoSolarium\Service;
+namespace SynergySolarium\Service;
 
-use EwgoSolarium\Plugin\RequestLogger;
+use SynergySolarium\Plugin\RequestLogger;
 use Interop\Container\ContainerInterface;
 use Zend\ServiceManager\Factory\FactoryInterface;
 
@@ -10,15 +10,16 @@ use Zend\ServiceManager\Factory\FactoryInterface;
  * Solarium request logger factory
  *
  * @license MIT
- * @package EwgoSolarium
+ * @package SynergySolarium
  */
 class RequestLoggerFactory implements FactoryInterface
 {
     /**
-     * Create service
-     *
      * @param ContainerInterface $serviceLocator
-     * @return mixed
+     * @param string $requestedName
+     * @param array|null $options
+     *
+     * @return RequestLogger
      */
     public function __invoke(ContainerInterface $serviceLocator, $requestedName, array $options = null)
     {
