@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/odiaseo/SolariumModule.svg?branch=master)](https://travis-ci.org/odiaseo/SolariumModule)
+
 # SynergySolarium module
 
 ## About
